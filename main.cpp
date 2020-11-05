@@ -13,29 +13,30 @@ Compilateur : Mingw-w64 g++ 8.1.0
 
 #include <cstdlib>
 #include <iostream>
+#include "functions.h"
+
 using namespace std;
 
 int main() {
 	unsigned int firstMonth, firstYear, lastMonth, lastYear;
-	bool saisieOK2;
-	do {
-		cout << "Entrez la date de debut [mm aaaa] : ";
-		cin >> firstMonth >> firstYear;
-		if (firstMonth <= 0) {
-			cin.clear(),
-				cout << "Saisie incorrecte" << endl;
-		}
-		saisieOK2 = false;
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-	} while (saisieOK2);
-	/*
-	cout << "Entrez la date de debut [mm aaaa] : ";
-	cin >> firstMonth >> firstYear;
-	cout << "Entrez la date de fin [mm aaaa] : ";
-	cin >>  lastMonth >> lastYear;
 
-	cout << firstMonth << " " << firstYear;
+	bool test;
+	do {
+		verificationDate(firstMonth, firstYear,
+						 "1Entrez la date de debut [mm aaaa] : ");
+		verificationDate(lastMonth, lastYear,
+						 "2Entrez la date de fin [mm aaaa] : ");
+
+		if (firstYear > lastYear || (firstMonth > lastMonth && firstYear > lastYear)) {
+			test = true;
+			cout << "Donnée incorrect" << endl;
+		} else {
+			test = false;
+		}
+	} while (test);
+
+	cout << firstMonth << " " << firstYear << endl;
 	cout << lastMonth << " " << lastYear;
-	*/
+
 	return EXIT_SUCCESS;
 }
