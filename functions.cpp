@@ -12,12 +12,12 @@ Compilateur : Mingw-w64 g++ 8.1.0
 #include <iostream>
 using namespace std;
 
-void verificationDate(unsigned int& mois, unsigned int& annee, string message) {
+void saisieDate(unsigned int& mois, unsigned int& annee, string message) {
 	bool verificationSaisie;
 	do {
 		cout << message;
-		if (!(verificationSaisie = cin >> mois >> annee && mois <= 12 &&
-			mois >= 1 && annee >= 1900 && annee <= 2100))
+		if (!(verificationSaisie = cin >> mois >> annee && mois <= 12 && mois >= 1
+			&& annee >= 1900 && annee <= 2100))
 		{
 			cin.clear(), cout << "Date non valide. Veuillez SVP recommencer." << endl;
 		}

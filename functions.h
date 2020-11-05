@@ -13,6 +13,6 @@ Compilateur : Mingw-w64 g++ 8.1.0
 #define HEIG_RRH_LABO_3_FUNCTIONS_H
 using namespace std;
 
-void verificationDate(unsigned int& mois, unsigned int& annee, string message);
+void saisieDate(unsigned int& mois, unsigned int& annee, string message);
 
 #endif //HEIG_RRH_LABO_3_FUNCTIONS_H

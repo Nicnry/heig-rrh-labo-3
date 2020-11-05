@@ -22,16 +22,14 @@ int main() {
 
 	bool test;
 	do {
-		verificationDate(firstMonth, firstYear,
-						 "1Entrez la date de debut [mm aaaa] : ");
-		verificationDate(lastMonth, lastYear,
-						 "2Entrez la date de fin [mm aaaa] : ");
-
-		if (firstYear > lastYear || (firstMonth > lastMonth && firstYear > lastYear)) {
-			test = true;
-			cout << "Donnée incorrect" << endl;
-		} else {
+		saisieDate(firstMonth, firstYear, "1Entrez la date de debut [mm aaaa] : ");
+		saisieDate(lastMonth, lastYear, "2Entrez la date de fin [mm aaaa] : ");
+		if ( lastYear > firstYear || lastYear == firstYear && lastMonth >=
+		firstMonth) {
 			test = false;
+		} else {
+			test = true;
+			cout << "Données incorrect" << endl;
 		}
 	} while (test);
 
