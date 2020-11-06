@@ -18,37 +18,44 @@ Compilateur : Mingw-w64 g++ 8.1.0
 #include "moislitteral.h"
 
 using namespace std;
-int calculerPremierJour(int mois,int annee){
+
+int calculerPremierJour(int mois,int annee) {
    int premierJour;
    //congruance de zeller
    // 0 = Samedi 1 = Dimanche 2 = Lundi ... 7 = Vendredi
-   premierJour = (1 + (13*(mois+1)/5) + annee % 100 + annee % 100 / 4 + annee / 100 /
-   4 - 2 * (annee / 100)) % 7;
+   premierJour =
+      (1 + (13 * (mois + 1) / 5) + annee % 100 + annee % 100 / 4 + annee / 100 /
+                                                                   4 -
+       2 * (annee / 100)) % 7;
    //1 = Lundi 2 = Mardi ... 7 = Dimanche
-   premierJour = (premierJour + 6 -1 ) % 7 + 1;
+   premierJour = (premierJour + 6 - 1) % 7 + 1;
    return premierJour;
 }
-bool calculerBissextile(int annee){
+
+bool calculerBissextile(int annee) {
    return annee % 4 == 0 && annee % 100 != 0 || annee % 400 == 0;
 }
+
 int calculerNbJourMois(int mois, bool estBissextile) {
-   if(mois == 2){
-      if(estBissextile){
+   if (mois == 2) {
+      if (estBissextile) {
          return 29;
-      }else{
+      } else {
          return 28;
       }
-   }else if (mois <= 7 && (mois % 2) != 0 || mois >= 8 && (mois % 2 ) == 0) {
+   } else if (mois <= 7 && (mois % 2) != 0 || mois >= 8 && (mois % 2) == 0) {
       return 31;
-   }else if(mois <= 7 && (mois % 2) == 0 || mois >= 8 && (mois % 2) != 0){
+   } else if (mois <= 7 && (mois % 2) == 0 || mois >= 8 && (mois % 2) != 0) {
       return 30;
-   }else{
+   } else {
       return 0;
    }
 }
-void afficherCalendrier(int jourDebut,int nbJour){
+
+void afficherCalendrier(int jourDebut, int nbJour) {
 
 }
+
 int main() {
    unsigned int moisDebut, anneeDebut, moisFin, anneeFin;
    const string MESSAGE_DEBUT = "Entrez la date de debut [mm aaaa] : ";
@@ -101,27 +108,25 @@ int main() {
       estBissextile = calculerBissextile(anneeActuel);
       if (moisActuel % 12 - 1 == 0) {
          anneeActuel += 1;
-         estBissextile= calculerBissextile(anneeActuel);
+         estBissextile = calculerBissextile(anneeActuel);
       }
       if (moisActuel > 12) {
          moisActuel = (moisActuel - 1) % 12 + 1;
       }
 
       moisActuelLiterral = moisLitteral(moisActuel);
-      premierJour = calculerPremierJour(moisActuel,anneeActuel);
-      nbJours = calculerNbJourMois(moisActuel,estBissextile);
-      cout << moisActuelLiterral << " " << anneeActuel<< endl;
+      premierJour = calculerPremierJour(moisActuel, anneeActuel);
+      nbJours = calculerNbJourMois(moisActuel, estBissextile);
+      cout << moisActuelLiterral << " " << anneeActuel << endl;
       cout << "  L  M  M  J  V  S  D " << endl;
-
-      nbEspace = premierJour -1;
-      for(int i= 0; i < nbEspace; i ++)
-      {
-         cout << setw(3) <<" ";
+      nbEspace = premierJour - 1;
+      for (int i = 0; i < nbEspace; i++) {
+         cout << setw(3) << " ";
       }
-      for(int i = 0; i< nbJours; i++){
-         cout << setw(3) << i ;
-         if((premierJour + i) %7 == 0){
-            cout<< endl;
+      for (int i = 1; i <= nbJours; i++) {
+         cout << setw(3) << i;
+         if ((premierJour + i - 1) % 7 == 0) {
+            cout << endl;
          }
       }
       cout << endl;
