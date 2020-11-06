@@ -9,10 +9,10 @@ Compilateur : Mingw-w64 g++ 8.1.0
 -----------------------------------------------------------------------------------
 */
 
-#ifndef HEIG_RRH_LABO_3_FUNCTIONS_H
-#define HEIG_RRH_LABO_3_FUNCTIONS_H
+#ifndef HEIG_RRH_LABO_3_SAISIEDATE_H
+#define HEIG_RRH_LABO_3_SAISIEDATE_H
 using namespace std;
 
 void saisieDate(unsigned int& mois, unsigned int& annee, string message);
 
-#endif //HEIG_RRH_LABO_3_FUNCTIONS_H
+#endif //HEIG_RRH_LABO_3_SAISIEDATE_H
