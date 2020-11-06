@@ -18,23 +18,39 @@ Compilateur : Mingw-w64 g++ 8.1.0
 using namespace std;
 
 int main() {
-	unsigned int firstMonth, firstYear, lastMonth, lastYear;
+   unsigned int moisDebut, anneeDebut, moisFin, anneeFin;
+   const string MESSAGE_DEBUT = "Entrez la date de debut [mm aaaa] : ";
+   const string MESSAGE_FIN = "Entrez la date de fin [mm aaaa] : ";
+   bool rejouer = true;
+   char entreeRejouer;
+   bool dateFinPlusGrandQueDebut = false;
+   //do {
 
-	bool test;
-	do {
-		saisieDate(firstMonth, firstYear, "1Entrez la date de debut [mm aaaa] : ");
-		saisieDate(lastMonth, lastYear, "2Entrez la date de fin [mm aaaa] : ");
-		if ( lastYear > firstYear || lastYear == firstYear && lastMonth >=
-		firstMonth) {
-			test = false;
-		} else {
-			test = true;
-			cout << "Données incorrect" << endl;
-		}
-	} while (test);
+      do {
+         saisieDate(moisDebut, anneeDebut, MESSAGE_DEBUT);
+         saisieDate(moisFin, anneeFin, MESSAGE_FIN);
+         if (anneeFin > anneeDebut || anneeFin == anneeDebut && moisFin >=
+                                                                moisDebut) {
+            dateFinPlusGrandQueDebut = true;
+         } else {
+            cin.clear(), cout << "Date non valide. Veuillez SVP recommencer."
+                              << endl;
+         }
+      } while (!dateFinPlusGrandQueDebut);
 
-	cout << firstMonth << " " << firstYear << endl;
-	cout << lastMonth << " " << lastYear;
+      cout << moisDebut << " " << anneeFin << endl;
+      cout << moisFin << " " << anneeFin;
 
-	return EXIT_SUCCESS;
+     /* do {
+
+         cout << "Voulez-vous quitter le programme ? [o/n] :";
+         cin >> entreeRejouer;
+         if(entreeRejouer == 'o'){
+            rejouer = false;
+         }
+         cout << entreeRejouer << endl;
+      }while(entreeRejouer != 'o' || entreeRejouer != 'n');
+   }while(rejouer);*/
+
+   return EXIT_SUCCESS;
 }
