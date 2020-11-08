@@ -14,7 +14,7 @@ Compilateur : Mingw-w64 g++ 8.1.0
 
 using namespace std;
 
-string moisLitteral(int mois) {
+string moisLitteral(unsigned int mois) {
 	switch (mois){
 		case 1:
 			return "Janvier";

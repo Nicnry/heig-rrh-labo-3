@@ -11,6 +11,6 @@ Compilateur : Mingw-w64 g++ 8.1.0
 #ifndef CALCULERBISSEXTILE_H
 #define CALCULERBISSEXTILE_H
 
-bool calculerBissextile(int annee);
+bool calculerBissextile(unsigned int annee);
 
 #endif

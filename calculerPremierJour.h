@@ -11,6 +11,6 @@ Compilateur : Mingw-w64 g++ 8.1.0
 #ifndef CALCULERPREMIERJOUR_H
 #define CALCULERPREMIERJOUR_H
 
-int calculerPremierJour(int jour, int mois,int annee);
+int calculerPremierJour(unsigned int jour, unsigned int mois, unsigned int annee);
 
 #endif

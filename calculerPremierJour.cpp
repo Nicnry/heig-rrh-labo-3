@@ -14,10 +14,10 @@ Compilateur : Mingw-w64 g++ 8.1.0
 
 using namespace std;
 
-int calculerPremierJour(int jour, int mois,int annee) {
-	int premierJour;
-	int k;
-	int j;
+int calculerPremierJour(unsigned int jour, unsigned int mois,unsigned int annee) {
+	unsigned int premierJour;
+	unsigned int k;
+	unsigned int j;
 
 	if (mois == 1)
 	{

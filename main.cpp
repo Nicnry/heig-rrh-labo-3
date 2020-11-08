@@ -27,9 +27,9 @@ int main() {
    unsigned int moisDebut, anneeDebut, moisFin, anneeFin;
    const string MESSAGE_DEBUT = "Entrez la date de debut [mm aaaa] : ";
    const string MESSAGE_FIN = "Entrez la date de fin [mm aaaa] : ";
-   char entreeRejouer;
+   //char entreeRejouer;
 
-   unsigned int nbMois = 0;
+   unsigned int nbMois;
    bool dateFinPlusGrandQueDebut = false;
 
    do {
@@ -83,12 +83,12 @@ int main() {
       cout << moisActuelLiterral << " " << anneeActuel << endl;
       cout << "  L  M  M  J  V  S  D " << endl;
       nbEspace = premierJour - 1;
-      for (int i = 0; i < nbEspace; i++) {
+      for (int j = 0; j < nbEspace; j++) {
          cout << setw(3) << " ";
       }
-      for (int i = 1; i <= nbJours; i++) {
-         cout << setw(3) << i;
-         if ((premierJour + i - 1) % 7 == 0) {
+      for (int k = 1; k <= nbJours; k++) {
+         cout << setw(3) << k;
+         if ((premierJour + k - 1) % 7 == 0) {
             cout << endl;
          }
       }
