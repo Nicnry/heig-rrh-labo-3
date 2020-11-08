@@ -11,7 +11,7 @@ Compilateur : Mingw-w64 g++ 8.1.0
 
 #include "calculerNbJourMois.h"
 
-int calculerNbJourMois(unsigned int mois, bool estBissextile) {
+unsigned int calculerNbJourMois(unsigned int mois, bool estBissextile) {
 	if (mois == 2) {
 		if (estBissextile) {
 			return 29;
