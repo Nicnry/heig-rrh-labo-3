@@ -19,16 +19,31 @@ Compilateur : Mingw-w64 g++ 8.1.0
 
 using namespace std;
 
-int calculerPremierJour(int mois,int annee) {
+int calculerPremierJour(int jour,int mois,int annee) {
    int premierJour;
+   int k;
+   int j;
+
+   if (mois == 1)
+   {
+      mois = 13;
+      annee--;
+   }
+   if (mois == 2)
+   {
+      mois = 14;
+      annee--;
+   }
+   k = annee % 100;
+   j = annee / 100;
+
    //congruance de zeller
    // 0 = Samedi 1 = Dimanche 2 = Lundi ... 7 = Vendredi
-   premierJour =
-      (1 + (13 * (mois + 1) / 5) + annee % 100 + annee % 100 / 4 + annee / 100 /
-                                                                   4 -
-       2 * (annee / 100)) % 7;
+   premierJour = jour + 13*(mois+1)/5 + k + k/4 + j/4 + 5*j;
+   premierJour = premierJour % 7;
+   cout << premierJour << endl;
    //1 = Lundi 2 = Mardi ... 7 = Dimanche
-   premierJour = (premierJour + 6 - 1) % 7 + 1;
+   premierJour = ((premierJour + 5) % 7) + 1;
    return premierJour;
 }
 
@@ -106,16 +121,17 @@ int main() {
 
       moisActuel = moisDebut + i;
       estBissextile = calculerBissextile(anneeActuel);
-      if (moisActuel % 12 - 1 == 0) {
-         anneeActuel += 1;
-         estBissextile = calculerBissextile(anneeActuel);
-      }
+
       if (moisActuel > 12) {
          moisActuel = (moisActuel - 1) % 12 + 1;
+         if (moisActuel % 12 - 1 == 0) {
+            anneeActuel += 1;
+            estBissextile = calculerBissextile(anneeActuel);
+         }
       }
 
       moisActuelLiterral = moisLitteral(moisActuel);
-      premierJour = calculerPremierJour(moisActuel, anneeActuel);
+      premierJour = calculerPremierJour(1,moisActuel, anneeActuel);
       nbJours = calculerNbJourMois(moisActuel, estBissextile);
       cout << moisActuelLiterral << " " << anneeActuel << endl;
       cout << "  L  M  M  J  V  S  D " << endl;
