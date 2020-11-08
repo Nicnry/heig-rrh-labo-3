@@ -9,17 +9,35 @@ Compilateur : Mingw-w64 g++ 8.1.0
 -----------------------------------------------------------------------------------
 */
 
+#include <iostream>
 #include "calculerPremierJour.h"
 
-int calculerPremierJour(int mois,int annee) {
+using namespace std;
+
+int calculerPremierJour(int jour, int mois,int annee) {
 	int premierJour;
+	int k;
+	int j;
+
+	if (mois == 1)
+	{
+		mois = 13;
+		annee--;
+	}
+	if (mois == 2)
+	{
+		mois = 14;
+		annee--;
+	}
+	k = annee % 100;
+	j = annee / 100;
+
 	//congruance de zeller
 	// 0 = Samedi 1 = Dimanche 2 = Lundi ... 7 = Vendredi
-	premierJour =
-		(1 + (13 * (mois + 1) / 5) + annee % 100 + annee % 100 / 4 + annee / 100 /
-																						 4 -
-		 2 * (annee / 100)) % 7;
+	premierJour = jour + 13*(mois+1)/5 + k + k/4 + j/4 + 5*j;
+	premierJour = premierJour % 7;
+	cout << premierJour << endl;
 	//1 = Lundi 2 = Mardi ... 7 = Dimanche
-	premierJour = (premierJour + 6 - 1) % 7 + 1;
+	premierJour = ((premierJour + 5) % 7) + 1;
 	return premierJour;
 }

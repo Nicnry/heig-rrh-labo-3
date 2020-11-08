@@ -1,16 +1,20 @@
 /*
 -----------------------------------------------------------------------------------
-Nom du fichier : calculerPremierJour.h
+Nom du fichier : moisLitteral.h
 Auteur(s) : Alexandre Junod, Jarod Streckeisen, Nicolas Henry
-Date creation : 08.11.2020
-Description : Définition de prototypes
+Date creation : 06.11.2020
+Description :
 Remarque(s) :
 Compilateur : Mingw-w64 g++ 8.1.0
 -----------------------------------------------------------------------------------
 */
-#ifndef CALCULERPREMIERJOUR_H
-#define CALCULERPREMIERJOUR_H
+#ifndef MOISLITTERAL_H
+#define MOISLITTERAL_H
 
-int calculerPremierJour(int jour, int mois,int annee);
+#include <string>
+
+using namespace std;
+
+string moisLitteral(int mois);
 
 #endif

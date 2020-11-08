@@ -1,16 +1,19 @@
 /*
 -----------------------------------------------------------------------------------
-Nom du fichier : calculerPremierJour.h
+Nom du fichier : saisieDate.h
 Auteur(s) : Alexandre Junod, Jarod Streckeisen, Nicolas Henry
-Date creation : 08.11.2020
-Description : Définition de prototypes
+Date creation : 05.11.2020
+Description :
 Remarque(s) :
 Compilateur : Mingw-w64 g++ 8.1.0
 -----------------------------------------------------------------------------------
 */
-#ifndef CALCULERPREMIERJOUR_H
-#define CALCULERPREMIERJOUR_H
 
-int calculerPremierJour(int jour, int mois,int annee);
+#ifndef SAISIEDATE_H
+#define SAISIEDATE_H
+
+using namespace std;
+
+void saisieDate(unsigned int& mois, unsigned int& annee, string message);
 
 #endif

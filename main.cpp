@@ -69,16 +69,16 @@ int main() {
       moisActuel = moisDebut + i;
       estBissextile = calculerBissextile(anneeActuel);
 
-      if (moisActuel > 12) {
-         moisActuel = (moisActuel - 1) % 12 + 1;
-         if (moisActuel % 12 - 1 == 0) {
-            anneeActuel += 1;
-            estBissextile = calculerBissextile(anneeActuel);
-         }
-      }
+		if (moisActuel > 12) {
+			moisActuel = (moisActuel - 1) % 12 + 1;
+			if (moisActuel % 12 - 1 == 0) {
+				anneeActuel += 1;
+				estBissextile = calculerBissextile(anneeActuel);
+			}
+		}
 
       moisActuelLiterral = moisLitteral(moisActuel);
-      premierJour = calculerPremierJour(1,moisActuel, anneeActuel);
+      premierJour = calculerPremierJour(1, moisActuel, anneeActuel);
       nbJours = calculerNbJourMois(moisActuel, estBissextile);
       cout << moisActuelLiterral << " " << anneeActuel << endl;
       cout << "  L  M  M  J  V  S  D " << endl;
