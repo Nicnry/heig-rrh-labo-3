@@ -14,88 +14,35 @@ Compilateur : Mingw-w64 g++ 8.1.0
 #include <cstdlib>
 #include <iostream>
 #include <iomanip>
-#include "saisiedate.h"
-#include "moislitteral.h"
+#include <string>
+#include "saisieDate.h"
+#include "moisLitteral.h"
+#include "calculerPremierJour.h"
+#include "calculerBissextile.h"
+#include "calculerNbJourMois.h"
 
 using namespace std;
-
-int calculerPremierJour(int jour,int mois,int annee) {
-   int premierJour;
-   int k;
-   int j;
-
-   if (mois == 1)
-   {
-      mois = 13;
-      annee--;
-   }
-   if (mois == 2)
-   {
-      mois = 14;
-      annee--;
-   }
-   k = annee % 100;
-   j = annee / 100;
-
-   //congruance de zeller
-   // 0 = Samedi 1 = Dimanche 2 = Lundi ... 7 = Vendredi
-   premierJour = jour + 13*(mois+1)/5 + k + k/4 + j/4 + 5*j;
-   premierJour = premierJour % 7;
-   cout << premierJour << endl;
-   //1 = Lundi 2 = Mardi ... 7 = Dimanche
-   premierJour = ((premierJour + 5) % 7) + 1;
-   return premierJour;
-}
-
-bool calculerBissextile(int annee) {
-   return annee % 4 == 0 && annee % 100 != 0 || annee % 400 == 0;
-}
-
-int calculerNbJourMois(int mois, bool estBissextile) {
-   if (mois == 2) {
-      if (estBissextile) {
-         return 29;
-      } else {
-         return 28;
-      }
-   } else if (mois <= 7 && (mois % 2) != 0 || mois >= 8 && (mois % 2) == 0) {
-      return 31;
-   } else if (mois <= 7 && (mois % 2) == 0 || mois >= 8 && (mois % 2) != 0) {
-      return 30;
-   } else {
-      return 0;
-   }
-}
-
-void afficherCalendrier(int jourDebut, int nbJour) {
-
-}
 
 int main() {
    unsigned int moisDebut, anneeDebut, moisFin, anneeFin;
    const string MESSAGE_DEBUT = "Entrez la date de debut [mm aaaa] : ";
    const string MESSAGE_FIN = "Entrez la date de fin [mm aaaa] : ";
-   bool rejouer = true;
    char entreeRejouer;
 
    unsigned int nbMois = 0;
    bool dateFinPlusGrandQueDebut = false;
-   //do {
 
    do {
       saisieDate(moisDebut, anneeDebut, MESSAGE_DEBUT);
       saisieDate(moisFin, anneeFin, MESSAGE_FIN);
-      if (anneeFin > anneeDebut || anneeFin == anneeDebut && moisFin >=
-                                                             moisDebut) {
+      if (anneeFin > anneeDebut || anneeFin == anneeDebut && moisFin >= moisDebut) {
          dateFinPlusGrandQueDebut = true;
       } else {
-         cin.clear(), cout << "Date non valide. Veuillez SVP recommencer."
-                           << endl;
+         cin.clear(), cout << "Date non valide. Veuillez SVP recommencer." << endl;
       }
    } while (!dateFinPlusGrandQueDebut);
 
-   cout << moisDebut << " " << anneeFin << endl;
-   cout << moisFin << " " << anneeFin << endl;
+
    // Calcul du nombre de mois total (donc le nombre de calendrier)
    switch (anneeFin - anneeDebut) {
       case 0:
@@ -109,7 +56,7 @@ int main() {
                   moisFin;
          break;
    }
-   cout << "NB MOIS " << nbMois << endl;
+
    unsigned int moisActuel;
    unsigned int anneeActuel = anneeDebut;
    string moisActuelLiterral;
@@ -147,16 +94,13 @@ int main() {
       }
       cout << endl;
    }
-   /* do {
 
-       cout << "Voulez-vous quitter le programme ? [o/n] :";
-       cin >> entreeRejouer;
-       if(entreeRejouer == 'o'){
-          rejouer = false;
-       }
-       cout << entreeRejouer << endl;
-    }while(entreeRejouer != 'o' || entreeRejouer != 'n');
- }while(rejouer);*/
+   /*
+   do {
+		cout << "Voulez-vous quitter le programme ? [o/n] :";
+		cin >> entreeRejouer;
+		cout << entreeRejouer << endl;
+	} while(entreeRejouer != 'o' || entreeRejouer != 'n'); */
 
    return EXIT_SUCCESS;
 }

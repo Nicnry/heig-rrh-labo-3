@@ -3,4 +3,4 @@ project(heig_rrh_labo_3)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(heig_rrh_labo_3 main.cpp saisiedate.h saisiedate.cpp moislitteral.cpp moislitteral.h)
+add_executable(heig_rrh_labo_3 main.cpp saisieDate.h saisieDate.cpp moisLitteral.cpp moisLitteral.h calculerPremierJour.h calculerPremierJour.cpp calculerBissextile.h calculerNbJourMois.h calculerBissextile.cpp calculerNbJourMois.cpp)
