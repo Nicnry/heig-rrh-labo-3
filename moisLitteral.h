@@ -3,7 +3,7 @@
 Nom du fichier : moisLitteral.h
 Auteur(s) : Alexandre Junod, Jarod Streckeisen, Nicolas Henry
 Date creation : 06.11.2020
-Description :
+Description : Définition de prototypes
 Remarque(s) :
 Compilateur : Mingw-w64 g++ 8.1.0
 -----------------------------------------------------------------------------------
