@@ -14,7 +14,7 @@ Compilateur : Mingw-w64 g++ 8.1.0
 
 using namespace std;
 
-void saisieDate(unsigned int& mois, unsigned int& annee,  string message) {
+void saisieDate(unsigned int& mois, unsigned int& annee, const string& message) {
 	bool estValide = false;
 	do {
 		cout << message;
