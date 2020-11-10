@@ -24,12 +24,12 @@ Compilateur : Mingw-w64 g++ 8.1.0
 using namespace std;
 
 int main() {
-   unsigned int moisDebut, anneeDebut, moisFin, anneeFin;
+   unsigned moisDebut, anneeDebut, moisFin, anneeFin;
    const string MESSAGE_DEBUT = "Entrez la date de debut [mm aaaa] : ";
    const string MESSAGE_FIN = "Entrez la date de fin [mm aaaa] : ";
    //char entreeRejouer;
 
-   unsigned int nbMois;
+   unsigned nbMois;
    bool dateFinPlusGrandQueDebut = false;
 
    do {
@@ -57,13 +57,13 @@ int main() {
          break;
    }
 
-   unsigned int moisActuel;
-   unsigned int anneeActuel = anneeDebut;
+   unsigned moisActuel;
+   unsigned anneeActuel = anneeDebut;
    string moisActuelLiterral;
    bool estBissextile;
-   unsigned int premierJour;
-   unsigned int nbJours;
-   unsigned int nbEspace;
+   unsigned premierJour;
+   unsigned nbJours;
+   unsigned nbEspace;
    for (int i = 0; i < nbMois; i++) {
 
       moisActuel = moisDebut + i;

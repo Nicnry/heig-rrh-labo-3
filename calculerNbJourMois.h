@@ -11,6 +11,6 @@ Compilateur : Mingw-w64 g++ 8.1.0
 #ifndef CALCULERNBJOURMOIS_H
 #define CALCULERNBJOURMOIS_H
 
-unsigned int calculerNbJourMois(unsigned int mois, bool estBissextile);
+unsigned calculerNbJourMois(unsigned mois, bool estBissextile);
 
 #endif

@@ -11,6 +11,6 @@ Compilateur : Mingw-w64 g++ 8.1.0
 
 #include "calculerBissextile.h"
 
-bool calculerBissextile(unsigned int annee) {
+bool calculerBissextile(unsigned annee) {
 	return annee % 4 == 0 && annee % 100 != 0 || annee % 400 == 0;
 }

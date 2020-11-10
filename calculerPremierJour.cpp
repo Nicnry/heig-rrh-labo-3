@@ -14,8 +14,7 @@ Compilateur : Mingw-w64 g++ 8.1.0
 
 using namespace std;
 
-unsigned int calculerPremierJour(unsigned int jour, unsigned int mois,unsigned int
-annee) {
+unsigned calculerPremierJour(unsigned jour, unsigned mois,unsigned annee) {
 	unsigned int premierJour;
 	unsigned int k;
 	unsigned int j;

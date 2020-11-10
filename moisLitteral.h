@@ -15,6 +15,6 @@ Compilateur : Mingw-w64 g++ 8.1.0
 
 using namespace std;
 
-string moisLitteral(unsigned int mois);
+string moisLitteral(unsigned mois);
 
 #endif
