@@ -34,7 +34,7 @@ void afficherCalendrier (unsigned moisDebut,unsigned anneeDebut,unsigned nbMois)
          }
       }
       moisActuelLiterral = moisLitteral(moisActuel);
-      premierJour = calculerPremierJour(1, moisActuel, anneeActuel);
+      premierJour = calculerJourDate(1, moisActuel, anneeActuel);
       nbJour = calculerNbJourMois(moisActuel, estBissextile);
 
       cout << endl << moisActuelLiterral << " " << anneeActuel << endl << endl;
