@@ -3,9 +3,10 @@
 Nom du fichier : calculsDeDate.cpp
 Auteur(s)      : Alexandre Junod, Jarod Streckeisen, Nicolas Henry
 Date creation  : 10.11.2020
-Description    : Permet de faire tous les calculs en rapport avec des date.
-                 Possède également une référence entre le numéro d'un mois et sa
-                 forme écrite
+Description    : Ensemble de calcul sur les dates permettant de : calculer la
+                 bissextilité d'une année, le nombre de jours dans un mois,
+                 calculer le jour de la semaine d'une date donnée, et d'avoir le
+                 mois sous sa forme littéral.
 Remarque(s)    :
 Compilateur    : Mingw-w64 g++ 8.1.0
 -----------------------------------------------------------------------------------
