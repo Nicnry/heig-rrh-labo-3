@@ -1,13 +1,12 @@
 /*
 -----------------------------------------------------------------------------------
 Nom du fichier : main.cpp
-Auteur(s) : Alexandre Junod, Jarod Streckeisen, Nicolas Henry
-Date creation : 05.11.2020
-Description : Ce programme permet d'afficher des pages de calendrier entre 2 dates
-              qui seront entrées par l'utilisateur.
-Remarque(s) : Les données utilisateurs ne comprennent pas le jour.
-tutu : entrer les variables sur une seule ligne
-Compilateur : Mingw-w64 g++ 8.1.0
+Auteur(s)      : Alexandre Junod, Jarod Streckeisen, Nicolas Henry
+Date creation  : 05.11.2020
+Description    : Ce programme permet d'afficher des pages de calendrier entre 2 dates
+                 qui seront entrées par l'utilisateur.
+Remarque(s)    : Les données utilisateurs ne comprennent pas le jour.
+Compilateur    : Mingw-w64 g++ 8.1.0
 -----------------------------------------------------------------------------------
 */
 
