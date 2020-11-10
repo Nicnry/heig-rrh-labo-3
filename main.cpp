@@ -20,54 +20,56 @@ Compilateur : Mingw-w64 g++ 8.1.0
 using namespace std;
 
 int main() {
-	string rejouer;
-	do{
+   string rejouer;
+   do{
 
-		unsigned moisDebut, anneeDebut, moisFin, anneeFin, nbMois = 0;
-		const string MESSAGE_DEBUT = "Entrez la date de debut [mm aaaa] : ";
-		const string MESSAGE_FIN = "Entrez la date de fin [mm aaaa] : ";
-
-
-		bool dateFinPlusGrandQueDebut = false;
-
-		do {
-			saisieDate(moisDebut, anneeDebut, MESSAGE_DEBUT);
-			saisieDate(moisFin, anneeFin, MESSAGE_FIN);
-			if (anneeFin > anneeDebut || anneeFin == anneeDebut && moisFin >= moisDebut) {
-				dateFinPlusGrandQueDebut = true;
-			} else {
-				cin.clear(), cout << "Date non valide. Veuillez SVP recommencer." << endl;
-			}
-		} while (!dateFinPlusGrandQueDebut);
+      unsigned moisDebut, anneeDebut, moisFin, anneeFin, nbMois = 0;
+      const string MESSAGE_DEBUT = "Entrez la date de debut [mm aaaa] : ";
+      const string MESSAGE_FIN = "Entrez la date de fin [mm aaaa] : ";
 
 
-		// Calcul du nombre de mois total (donc le nombre de calendrier)
-		switch (anneeFin - anneeDebut) {
-			case 0:
-				nbMois = moisFin - moisDebut + 1;
-				break;
-			case 1:
-				nbMois = 12 - moisDebut + moisFin + 1;
-				break;
-			default:
-				nbMois = (12 - moisDebut + 1) + (12 * (anneeFin - anneeDebut - 1)) +
-							moisFin;
-				break;
-		}
+      bool dateFinPlusGrandQueDebut = false;
+
+      // Gére le saisie utilisateur, jusqu'à que celle-ci soit valide
+      do {
+         saisieDate(moisDebut, anneeDebut, MESSAGE_DEBUT);
+         saisieDate(moisFin, anneeFin, MESSAGE_FIN);
+         if (anneeFin > anneeDebut || anneeFin == anneeDebut && moisFin >= moisDebut) {
+            dateFinPlusGrandQueDebut = true;
+         } else {
+            cin.clear(), cout << "Date non valide. Veuillez SVP recommencer." << endl;
+         }
+      } while (!dateFinPlusGrandQueDebut);
+
+
+      // Calcul du nombre de mois total (donc le nombre de calendrier)
+      switch (anneeFin - anneeDebut) {
+         case 0:
+            nbMois = moisFin - moisDebut + 1;
+            break;
+         case 1:
+            nbMois = 12 - moisDebut + moisFin + 1;
+            break;
+         default:
+            nbMois = (12 - moisDebut + 1) + (12 * (anneeFin - anneeDebut - 1)) +
+                     moisFin;
+            break;
+      }
+
+      // Affichage du calendrier et message de fin
       afficherCalendrier(moisDebut,anneeDebut,nbMois);
-		cout << "Voulez-vous quitter le programme ? [o/n] :";
-		getline(cin,rejouer);
-		cin.clear();
+      cout << "Voulez-vous quitter le programme ? [o/n] :";
+      getline(cin,rejouer);
+      cin.clear();
 
-		while (rejouer != "o" && rejouer != "n") {
-			cout << "Veuillez choisir entre 'o' et 'n' :";
-			getline(cin,rejouer);
-			cin.clear();
-		}
+      while (rejouer != "o" && rejouer != "n") {
+         cout << "Veuillez choisir entre 'o' et 'n' :";
+         getline(cin,rejouer);
+         cin.clear();
+      }
 
-	} while( rejouer == "n" );
-	cin.ignore(1);
-
+   } while( rejouer == "n" );
+   cin.ignore(1);
 
    return EXIT_SUCCESS;
 }

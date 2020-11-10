@@ -1,11 +1,13 @@
 /*
 -----------------------------------------------------------------------------------
 Nom du fichier : calculsDeDate.cpp
-Auteur(s) : Alexandre Junod, Jarod Streckeisen, Nicolas Henry
-Date creation : 10.11.2020
-Description :
-Remarque(s) :
-Compilateur : Mingw-w64 g++ 8.1.0
+Auteur(s)      : Alexandre Junod, Jarod Streckeisen, Nicolas Henry
+Date creation  : 10.11.2020
+Description    : Permet de faire tous les calculs en rapport avec des date.
+                 Possède également une référence entre le numéro d'un mois et sa
+                 forme écrite
+Remarque(s)    :
+Compilateur    : Mingw-w64 g++ 8.1.0
 -----------------------------------------------------------------------------------
 */
 
@@ -52,12 +54,12 @@ unsigned calculerJourDate(unsigned jour, unsigned mois,unsigned annee) {
    k = annee % 100;
    j = annee / 100;
 
-   //congruance de zeller
+   // congruance de zeller
    // 0 = Samedi 1 = Dimanche 2 = Lundi ... 7 = Vendredi
    premierJour = jour + 13*(mois+1)/5 + k + k/4 + j/4 + 5*j;
    premierJour = premierJour % 7;
    cout << premierJour << endl;
-   //1 = Lundi 2 = Mardi ... 7 = Dimanche
+   // 1 = Lundi 2 = Mardi ... 7 = Dimanche
    premierJour = ((premierJour + 5) % 7) + 1;
    return premierJour;
 }
