@@ -23,15 +23,17 @@ void saisieDate(unsigned& mois, unsigned& annee, const string& message) {
 
 		if (cin.peek() == '\n') {
 			cin.clear(), cout << "Date non valide. Veuillez SVP recommencer." << endl;
-		} else {
+         cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+      } else {
 			cin >> annee;
+         if (mois <= 12 && mois >= 1 && annee >= 1900 && annee <= 2100) {
+            estValide = true;
+         } else {
+            cin.clear(), cout << "Date non valide. Veuillez SVP recommencer." << endl;
+         }
+         cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		}
 
-      if (mois <= 12 && mois >= 1 && annee >= 1900 && annee <= 2100) {
-         estValide = true;
-      } else {
-         cin.clear(), cout << "Date non valide. Veuillez SVP recommencer." << endl;
-      }
-      cin.ignore(numeric_limits<streamsize>::max(), '\n');
    } while (!estValide);
 }
