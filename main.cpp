@@ -20,7 +20,7 @@ Compilateur : Mingw-w64 g++ 8.1.0
 using namespace std;
 
 int main() {
-	char rejouer;
+	string rejouer;
 	do{
 
 		unsigned moisDebut, anneeDebut, moisFin, anneeFin,nbMois;
@@ -56,8 +56,14 @@ int main() {
 		}
       afficherCalendrier(moisDebut,anneeDebut,nbMois);
 		cout << "Voulez-vous quitter le programme ? [o/n] :";
-		cin >> rejouer;
-	} while( rejouer == 'n' );
+		getline(cin,rejouer);
+
+		while (rejouer != "o" && rejouer != "n") {
+			cin.clear(), cout << "Veuillez choisir entre 'o' et 'n' :";
+			getline(cin,rejouer);
+		}
+
+	} while( rejouer == "n" );
 	cin.ignore(1);
 
 
