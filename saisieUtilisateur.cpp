@@ -19,7 +19,14 @@ void saisieDate(unsigned& mois, unsigned& annee, const string& message) {
    do {
       cout << message;
 
-      cin >> mois >> annee;
+      cin >> mois;
+
+		if (cin.peek() == '\n') {
+			cin.clear(), cout << "Date non valide. Veuillez SVP recommencer." << endl;
+		} else {
+			cin >> annee;
+		}
+
       if (mois <= 12 && mois >= 1 && annee >= 1900 && annee <= 2100) {
          estValide = true;
       } else {
