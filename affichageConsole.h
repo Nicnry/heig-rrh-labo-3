@@ -10,5 +10,5 @@ Compilateur : Mingw-w64 g++ 8.1.0
 */
 #ifndef AFFICHAGECONSOLE_H
 #define AFFICHAGECONSOLE_H
-void afficherCalendrier(unsigned moisDebut,unsigned anneeDebut);
+void afficherCalendrier(unsigned moisDebut,unsigned anneeDebut,unsigned nbMois);
 #endif

@@ -12,7 +12,7 @@ Compilateur : Mingw-w64 g++ 8.1.0
 #include <iostream>
 #include <iomanip>
 #include "affichageConsole.h"
-#include "calcules.cpp"
+#include "calculsDeDate.h"
 
 using namespace std;
 void afficherCalendrier (unsigned moisDebut,unsigned anneeDebut,unsigned nbMois){

@@ -14,8 +14,8 @@ Compilateur : Mingw-w64 g++ 8.1.0
 #include <cstdlib>
 #include <iostream>
 #include <string>
-#include "saisieDate.h"
-#include "calculsDeDate.h"
+#include "saisieUtilisateur.h"
+#include "affichageConsole.h"
 
 using namespace std;
 
@@ -54,7 +54,7 @@ int main() {
 							moisFin;
 				break;
 		}
-
+      afficherCalendrier(moisDebut,anneeDebut,nbMois);
 		cout << "Voulez-vous quitter le programme ? [o/n] :";
 		cin >> rejouer;
 	} while( rejouer == 'n' );
