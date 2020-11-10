@@ -56,7 +56,6 @@ unsigned calculerPremierJour(unsigned jour, unsigned mois,unsigned annee) {
    // 0 = Samedi 1 = Dimanche 2 = Lundi ... 7 = Vendredi
    premierJour = jour + 13*(mois+1)/5 + k + k/4 + j/4 + 5*j;
    premierJour = premierJour % 7;
-   cout << premierJour << endl;
    //1 = Lundi 2 = Mardi ... 7 = Dimanche
    premierJour = ((premierJour + 5) % 7) + 1;
    return premierJour;

@@ -36,6 +36,5 @@ void saisieDate(unsigned &mois, unsigned &annee, const string &message) {
          }
 
       }
-      cout << mois << "-" << annee;
    } while (!estValide);
 }
