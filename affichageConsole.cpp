@@ -1,11 +1,12 @@
 /*
 -----------------------------------------------------------------------------------
 Nom du fichier : saisieDate.cpp
-Auteur(s) : Alexandre Junod, Jarod Streckeisen, Nicolas Henry
-Date creation : 10.11.2020
-Description :
-Remarque(s) :
-Compilateur : Mingw-w64 g++ 8.1.0
+Auteur(s) 		: Alexandre Junod, Jarod Streckeisen, Nicolas Henry
+Date creation 	: 10.11.2020
+Description 	: Fonctions d'affichage dans la console, permet d'afficher un
+					  calendrier entre deux dates.
+Remarque(s) 	:
+Compilateur 	: Mingw-w64 g++ 8.1.0
 -----------------------------------------------------------------------------------
 */
 #include <string>
@@ -15,6 +16,7 @@ Compilateur : Mingw-w64 g++ 8.1.0
 #include "calculsDeDate.h"
 
 using namespace std;
+
 void afficherCalendrier (unsigned moisDebut,unsigned anneeDebut,unsigned nbMois){
    unsigned moisActuel,premierJour,nbJour,nbEspace;
    unsigned anneeActuel = anneeDebut;
