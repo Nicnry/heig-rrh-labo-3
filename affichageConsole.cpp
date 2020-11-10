@@ -37,7 +37,7 @@ void afficherCalendrier (unsigned moisDebut,unsigned anneeDebut,unsigned nbMois)
       premierJour = calculerPremierJour(1, moisActuel, anneeActuel);
       nbJour = calculerNbJourMois(moisActuel, estBissextile);
 
-      cout << moisActuelLiterral << " " << anneeActuel << endl;
+      cout << endl << moisActuelLiterral << " " << anneeActuel << endl << endl;
       cout << "  L  M  M  J  V  S  D " << endl;
       nbEspace = premierJour - 1;
       for (int j = 0; j < nbEspace; j++) {
