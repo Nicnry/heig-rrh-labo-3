@@ -16,10 +16,7 @@ Compilateur : Mingw-w64 g++ 8.1.0
 #include <iomanip>
 #include <string>
 #include "saisieDate.h"
-#include "moisLitteral.h"
-#include "calculerPremierJour.h"
-#include "calculerBissextile.h"
-#include "calculerNbJourMois.h"
+#include "calculsDeDate.h"
 
 using namespace std;
 
