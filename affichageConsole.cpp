@@ -1,6 +1,6 @@
 /*
 -----------------------------------------------------------------------------------
-Nom du fichier : saisieDate.cpp
+Nom du fichier : affichageConsole.cpp
 Auteur(s) 		: Alexandre Junod, Jarod Streckeisen, Nicolas Henry
 Date creation 	: 10.11.2020
 Description 	: Fonctions d'affichage dans la console, permet d'afficher un
