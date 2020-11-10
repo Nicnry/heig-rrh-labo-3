@@ -13,10 +13,9 @@ Compilateur : Mingw-w64 g++ 8.1.0
 
 #include <cstdlib>
 #include <iostream>
-#include <iomanip>
 #include <string>
 #include "saisieDate.h"
-#include "calculsDeDate.h"
+#include "affichageConsole.h"
 
 using namespace std;
 
@@ -24,11 +23,11 @@ int main() {
 	char rejouer;
 	do{
 
-		unsigned moisDebut, anneeDebut, moisFin, anneeFin;
+		unsigned moisDebut, anneeDebut, moisFin, anneeFin,nbMois;
 		const string MESSAGE_DEBUT = "Entrez la date de debut [mm aaaa] : ";
 		const string MESSAGE_FIN = "Entrez la date de fin [mm aaaa] : ";
 
-		unsigned nbMois;
+
 		bool dateFinPlusGrandQueDebut = false;
 
 		do {
@@ -55,44 +54,7 @@ int main() {
 							moisFin;
 				break;
 		}
-
-		unsigned moisActuel;
-		unsigned anneeActuel = anneeDebut;
-		string moisActuelLiterral;
-		bool estBissextile;
-		unsigned premierJour;
-		unsigned nbJours;
-		unsigned nbEspace;
-		for (int i = 0; i < nbMois; i++) {
-
-			moisActuel = moisDebut + i;
-			estBissextile = calculerBissextile(anneeActuel);
-
-			if (moisActuel > 12) {
-				moisActuel = (moisActuel - 1) % 12 + 1;
-				if (moisActuel % 12 - 1 == 0) {
-					anneeActuel += 1;
-					estBissextile = calculerBissextile(anneeActuel);
-				}
-			}
-
-			moisActuelLiterral = moisLitteral(moisActuel);
-			premierJour = calculerPremierJour(1, moisActuel, anneeActuel);
-			nbJours = calculerNbJourMois(moisActuel, estBissextile);
-			cout << moisActuelLiterral << " " << anneeActuel << endl;
-			cout << "  L  M  M  J  V  S  D " << endl;
-			nbEspace = premierJour - 1;
-			for (int j = 0; j < nbEspace; j++) {
-				cout << setw(3) << " ";
-			}
-			for (int k = 1; k <= nbJours; k++) {
-				cout << setw(3) << k;
-				if ((premierJour + k - 1) % 7 == 0) {
-					cout << endl;
-				}
-			}
-			cout << endl;
-		}
+      afficherCalendrier(moisDebut,anneeDebut,nbMois);
 		cout << "Voulez-vous quitter le programme ? [o/n] :";
 		cin >> rejouer;
 	} while( rejouer == 'n' );
