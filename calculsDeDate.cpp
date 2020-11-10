@@ -34,7 +34,7 @@ unsigned calculerNbJourMois(unsigned mois, bool estBissextile) {
    }
 }
 
-unsigned calculerPremierJour(unsigned jour, unsigned mois,unsigned annee) {
+unsigned calculerJourDate(unsigned jour, unsigned mois,unsigned annee) {
    unsigned int premierJour;
    unsigned int k;
    unsigned int j;

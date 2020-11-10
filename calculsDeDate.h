@@ -34,13 +34,14 @@ unsigned calculerNbJourMois(unsigned mois, bool estBissextile);
 
 /**
  * Calcule le jour pour la date donnée (lundi à dimanche)
- * @param jour Le jour de la date
+ * @param jour Le jour de la date. Pour l'instant le premier jour est hardcodé,
+ * mais celui-ci est disponible pour une future évolutivité
  * @param mois Le mois de la date
  * @param annee L'année de la date
  * @return Retourne le jour date du séléctionnée. 1 = Lundi 2 = Mardi ... 7 =
  * Dimanche
  */
-unsigned calculerPremierJour(unsigned jour, unsigned mois, unsigned annee);
+unsigned calculerJourDate(unsigned jour, unsigned mois, unsigned annee);
 
 /**
  * Référence du mois en valeur numérique à sa forme écrite. 1 = Janvier 2 = Févreier
