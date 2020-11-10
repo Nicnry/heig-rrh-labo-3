@@ -49,6 +49,6 @@ void afficherCalendrier (unsigned moisDebut,unsigned anneeDebut,unsigned nbMois)
             cout << endl;
          }
       }
-      cout << endl;
+      cout << endl << endl;
    }
 }
