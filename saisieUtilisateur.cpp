@@ -1,11 +1,11 @@
 /*
 -----------------------------------------------------------------------------------
 Nom du fichier : saisieDate.cpp
-Auteur(s) : Alexandre Junod, Jarod Streckeisen, Nicolas Henry
-Date creation : 10.11.2020
-Description : Contient la/les fonctions lié à la saisie utilisateur.
-Remarque(s) :
-Compilateur : Mingw-w64 g++ 8.1.0
+Auteur(s)      : Alexandre Junod, Jarod Streckeisen, Nicolas Henry
+Date creation  : 10.11.2020
+Description    : Contient la/les fonctions lié à la saisie utilisateur.
+Remarque(s)    :
+Compilateur    : Mingw-w64 g++ 8.1.0
 -----------------------------------------------------------------------------------
 */
 
