@@ -23,7 +23,7 @@ int main() {
 	string rejouer;
 	do{
 
-		unsigned moisDebut, anneeDebut, moisFin, anneeFin,nbMois;
+		unsigned moisDebut, anneeDebut, moisFin, anneeFin, nbMois = 0;
 		const string MESSAGE_DEBUT = "Entrez la date de debut [mm aaaa] : ";
 		const string MESSAGE_FIN = "Entrez la date de fin [mm aaaa] : ";
 
