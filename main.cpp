@@ -58,12 +58,11 @@ int main() {
       }
       afficherCalendrier(moisDebut, anneeDebut, nbMois);
       cout << "Voulez-vous quitter le programme ? [o/n] :";
-      getline(cin, rejouer);
+      cin >> rejouer;
       cin.clear();
-
       while (rejouer != "o" && rejouer != "n") {
          cout << "Veuillez choisir entre 'o' et 'n' :";
-         getline(cin, rejouer);
+         cin >> rejouer;
          cin.clear();
       }
 
