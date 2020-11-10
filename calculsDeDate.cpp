@@ -37,9 +37,7 @@ unsigned calculerNbJourMois(unsigned mois, bool estBissextile) {
 }
 
 unsigned calculerJourDate(unsigned jour, unsigned mois,unsigned annee) {
-   unsigned int premierJour;
-   unsigned int k;
-   unsigned int j;
+   unsigned int premierJour,k,j;
 
    if (mois == 1)
    {
@@ -58,8 +56,12 @@ unsigned calculerJourDate(unsigned jour, unsigned mois,unsigned annee) {
    // 0 = Samedi 1 = Dimanche 2 = Lundi ... 7 = Vendredi
    premierJour = jour + 13*(mois+1)/5 + k + k/4 + j/4 + 5*j;
    premierJour = premierJour % 7;
+<<<<<<< HEAD
    cout << premierJour << endl;
    // 1 = Lundi 2 = Mardi ... 7 = Dimanche
+=======
+   //1 = Lundi 2 = Mardi ... 7 = Dimanche
+>>>>>>> 932138c98f9eb8e31370e0152f14800e597d87c5
    premierJour = ((premierJour + 5) % 7) + 1;
    return premierJour;
 }
